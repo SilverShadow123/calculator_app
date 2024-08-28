@@ -55,16 +55,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  // const SizedBox(
-                  //   height: 100,
-                  // ),
                   Text(
                     ' ${_reasult.toStringAsFixed(2)}',
                     style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
-                  // const SizedBox(
-                  //   height: 100,
-                  // ),
                   const Divider(
                     color: Colors.grey,
                   ),
