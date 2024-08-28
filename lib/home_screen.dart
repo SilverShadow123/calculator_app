@@ -29,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+
                   TextField(
                     controller: _controller,
                     focusNode: _focusNode1,
@@ -40,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       label: Text('1st Number'),
                     ),
                   ),
+
                   TextField(
                     controller: _seccontroller,
                     focusNode: _focusNode2,
@@ -51,31 +53,38 @@ class _HomeScreenState extends State<HomeScreen> {
                       label: Text('2nd Number'),
                     ),
                   ),
-                  const SizedBox(
-                    height: 200,
-                  ),
-                  Container(
-                      alignment: Alignment(0, 0),
-                      child: Text(
-                        ' ${_reasult.toStringAsFixed(2)}',
-                        style:
-                            TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                      )),
+
                   const SizedBox(
                     height: 100,
                   ),
+
+                  Text(
+                    ' ${_reasult.toStringAsFixed(2)}',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+
+                  const SizedBox(
+                    height: 100,
+                  ),
+
                   _buttonBar1(),
+
                   const SizedBox(
                     height: 10,
                   ),
+
                   _buttonBar2(),
+
                   const SizedBox(
                     height: 10,
                   ),
+
                   _buttonBar3(),
+
                   const SizedBox(
                     height: 10,
                   ),
+
                   _buttonBar4(),
                 ],
               ),
@@ -89,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
       alignment: MainAxisAlignment.spaceEvenly,
       children: [
         ElevatedButton(
-          onPressed: () => _clear,
+          onPressed: _clear,
           child: const Text('AC'),
         ),
         ElevatedButton(
@@ -190,9 +199,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _clear() {
     _seccontroller.clear();
-    _controller.clear();
-    _reasult = 0;
+     _controller.clear();
+     _reasult =0;
+     setState(() {
+
+     });
+
   }
+
 
   void _appendNumber(String number) {
     if (_focusNode1.hasFocus) {
