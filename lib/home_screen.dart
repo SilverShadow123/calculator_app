@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'function.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,35 +9,34 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  TextEditingController _controller = TextEditingController();
-  TextEditingController _seccontroller = TextEditingController();
-  FocusNode _focusNode1 = FocusNode();
-  FocusNode _focusNode2 = FocusNode();
+ final TextEditingController _controller = TextEditingController();
+ final TextEditingController _seccontroller = TextEditingController();
+ final FocusNode _focusNode1 = FocusNode();
+ final FocusNode _focusNode2 = FocusNode();
   double _reasult = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Calculator'),
+          title: const Text('Calculator'),
           centerTitle: true,
         ),
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: SafeArea(
-            child: SingleChildScrollView(
-
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       TextField(
                         controller: _controller,
                         focusNode: _focusNode1,
                         keyboardType: TextInputType.none,
                         textAlign: TextAlign.end,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Enter 1st Number',
                           label: Text('1st Number'),
@@ -49,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         focusNode: _focusNode2,
                         textAlign: TextAlign.end,
                         keyboardType: TextInputType.none,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Enter 2nd Number',
                           label: Text('2nd Number'),
@@ -57,16 +55,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 100,
-                  ),
+                  // const SizedBox(
+                  //   height: 100,
+                  // ),
                   Text(
                     ' ${_reasult.toStringAsFixed(2)}',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(
-                    height: 100,
-                  ),
+                  // const SizedBox(
+                  //   height: 100,
+                  // ),
                   const Divider(
                     color: Colors.grey,
                   ),
@@ -92,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-            ),
+
           ),
         ));
   }
@@ -305,4 +303,14 @@ class _HomeScreenState extends State<HomeScreen> {
     _reasult = firstnum / sectnum;
     setState(() {});
   }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _controller.dispose();
+    _seccontroller.dispose();
+    super.dispose();
+
+  }
+
 }
