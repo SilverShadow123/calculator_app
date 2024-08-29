@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 
-void main()
-{
-  runApp(calculator_app());
+void main() {
+  runApp(calculator_app(), // Wrap your app
+  );
 }
 
 class calculator_app extends StatelessWidget {
