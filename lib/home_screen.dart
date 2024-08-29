@@ -64,21 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Column(
                     children: [
-                      const SizedBox(
-                        height: 50,
-                      ),
                       _buttonBar1(),
-                      const SizedBox(
-                        height: 10,
-                      ),
                       _buttonBar2(),
-                      const SizedBox(
-                        height: 10,
-                      ),
                       _buttonBar3(),
-                      const SizedBox(
-                        height: 10,
-                      ),
                       _buttonBar4(),
                     ],
                   ),
